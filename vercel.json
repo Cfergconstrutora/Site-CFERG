@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "cfergconstrutora.vercel.app"
+        }
+      ],
+      "destination": "https://cfergconstrutora.com/:path*",
+      "permanent": true
+    }
+  ]
+}
