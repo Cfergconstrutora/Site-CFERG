@@ -236,7 +236,9 @@
     #prova-social{background:var(--light);padding:var(--section-pad) 0}
     #parceiros{background:var(--white);padding:var(--section-pad) 0}
     .parceiros-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-    .parceiro-card{background:var(--white);border:1px solid rgba(13,27,42,.1);border-radius:var(--radius);padding:30px 24px;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;transition:var(--transition)}
+    .parceiro-card{background:var(--white);border:1px solid rgba(13,27,42,.1);border-radius:var(--radius);padding:30px 24px;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;transition:var(--transition);text-decoration:none}
+    a.parceiro-card{cursor:pointer}
+    a.parceiro-card:hover{border-color:var(--gold)}
     .parceiro-card img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:3px}
     .parceiro-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:transparent}
     @media(max-width:860px){.parceiros-grid{grid-template-columns:repeat(2,1fr)}}
@@ -1068,15 +1070,15 @@ Para ativar:
       <h2 id="parceiros-h2">Nossos parceiros.</h2>
     </div>
     <div class="parceiros-grid reveal">
-      <div class="parceiro-card">
+      <a class="parceiro-card" href="https://wa.me/5562985813462?text=Olá,%20vi%20seu%20contato%20no%20site%20do%20seu%20parceiro%20C%20FERG%20Construtora." target="_blank" rel="noopener" title="Falar com ZIG Ferro & Aço no WhatsApp">
         <img src="images/parceiros/zig-ferro-aco.png" alt="ZIG Ferro & Aço" width="215" height="100" loading="lazy" />
-      </div>
-      <div class="parceiro-card">
+      </a>
+      <a class="parceiro-card" href="https://wa.me/5562985897850?text=Olá,%20vi%20seu%20contato%20no%20site%20do%20seu%20parceiro%20C%20FERG%20Construtora." target="_blank" rel="noopener" title="Falar com São Caetano Materiais para Construção no WhatsApp">
         <img src="images/parceiros/sao-caetano.png" alt="São Caetano Materiais para Construção" width="738" height="538" loading="lazy" />
-      </div>
-      <div class="parceiro-card">
+      </a>
+      <a class="parceiro-card" href="https://wa.me/5562993038084?text=Olá,%20vi%20seu%20contato%20no%20site%20do%20seu%20parceiro%20C%20FERG%20Construtora." target="_blank" rel="noopener" title="Falar com SM Sol Maior Energia Solar no WhatsApp">
         <img src="images/parceiros/sm-sol-maior.jpg" alt="SM Sol Maior Energia Solar" width="575" height="608" loading="lazy" />
-      </div>
+      </a>
       <div class="parceiro-card">
         <img src="images/parceiros/ciplan.jpg" alt="CIPLAN" width="488" height="409" loading="lazy" />
       </div>
