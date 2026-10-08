@@ -235,12 +235,12 @@
     /* PROVA SOCIAL */
     #prova-social{background:var(--light);padding:var(--section-pad) 0}
     #parceiros{background:var(--white);padding:var(--section-pad) 0}
-    .parceiros-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
-    .parceiro-card{background:var(--light);border-radius:var(--radius);padding:28px;display:flex;align-items:center;justify-content:center;min-height:140px;transition:var(--transition)}
-    .parceiro-card img{max-width:100%;max-height:88px;width:auto;height:auto;object-fit:contain}
-    .parceiro-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+    .parceiros-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .parceiro-card{background:var(--white);border:1px solid rgba(13,27,42,.1);border-radius:var(--radius);padding:30px 24px;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;transition:var(--transition)}
+    .parceiro-card img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:3px}
+    .parceiro-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:transparent}
     @media(max-width:860px){.parceiros-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:480px){.parceiros-grid{grid-template-columns:1fr;max-width:320px;margin-inline:auto}}
+    @media(max-width:480px){.parceiros-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
     .trust-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--navy);border-radius:var(--radius);overflow:hidden;margin-bottom:80px}
     .trust-item{background:var(--steel);padding:32px 24px;text-align:center}
     .trust-num{font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--gold);line-height:1}
@@ -1072,10 +1072,10 @@ Para ativar:
         <img src="images/parceiros/zig-ferro-aco.png" alt="ZIG Ferro & Aço" width="215" height="100" loading="lazy" />
       </div>
       <div class="parceiro-card">
-        <img src="images/parceiros/sao-caetano.png" alt="São Caetano Materiais para Construção" width="738" height="754" loading="lazy" />
+        <img src="images/parceiros/sao-caetano.png" alt="São Caetano Materiais para Construção" width="738" height="538" loading="lazy" />
       </div>
       <div class="parceiro-card">
-        <img src="images/parceiros/sm-sol-maior.jpg" alt="SM Sol Maior Energia Solar" width="1280" height="852" loading="lazy" />
+        <img src="images/parceiros/sm-sol-maior.jpg" alt="SM Sol Maior Energia Solar" width="575" height="608" loading="lazy" />
       </div>
       <div class="parceiro-card">
         <img src="images/parceiros/ciplan.jpg" alt="CIPLAN" width="488" height="409" loading="lazy" />
