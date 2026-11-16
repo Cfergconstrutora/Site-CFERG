@@ -117,10 +117,15 @@ footer .foot-links{margin-top:10px;display:flex;flex-wrap:wrap;justify-content:c
 .split-text p{color:var(--muted);font-size:1.05rem;margin-bottom:26px}
 @media (max-width:860px){.split{grid-template-columns:1fr}.split-img figcaption{left:8px}}
 
-/* ===== TESTE: fontes e imagens menores (remover este bloco para voltar) ===== */
+/* ===== AJUSTE: fontes 90%, imagens menores e sem corte (remover este bloco para voltar) ===== */
 html{font-size:90%}
 :root{--section-pad:clamp(40px,6vw,80px)}
 #hero{min-height:72svh}
-.gallery-item{aspect-ratio:16/10}
-.split-img img{aspect-ratio:1/1}
-/* ===== fim do teste ===== */
+.gallery-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:14px}
+.gallery-item{position:relative;aspect-ratio:auto;flex:0 0 auto;max-width:100%;overflow:hidden;border-radius:var(--radius);background:var(--navy)}
+.gallery-item img{width:auto;max-width:100%;height:230px;object-fit:contain}
+.gallery-cap{position:static;background:var(--navy);padding:8px 10px;font-size:.78rem;text-align:center}
+.split-img{width:fit-content;max-width:100%;margin-inline:auto}
+.split-img img{aspect-ratio:auto;width:auto;height:auto;max-width:100%;max-height:380px;object-fit:contain}
+@media(max-width:520px){.gallery-item img{height:170px}}
+/* ===== fim do ajuste ===== */
