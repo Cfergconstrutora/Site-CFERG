@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://cfergconstrutora.com/galpao-agricola-jatai-go" />
   <meta property="og:image" content="https://cfergconstrutora.com/images/og-cover.webp" />
   <meta property="og:locale" content="pt_BR" />
-  <link rel="icon" href="/images/favicon.png" type="image/png" />
+  <link rel="icon" href="/images/favicon-96.png" sizes="96x96" type="image/png" />
 
   <script type="application/ld+json">
   {
@@ -122,8 +122,10 @@
     gtag('js', new Date());
     gtag('config', 'G-D31ZWXHZ4N');
     document.addEventListener('click', function(e){
-      var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
-      if (a) { gtag('event', 'whatsapp_click', { page_path: location.pathname, link_url: a.href }); }
+      var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href^="tel:"]');
+      if (!a) return;
+      var ev = a.href.indexOf('tel:') === 0 ? 'phone_click' : 'whatsapp_click';
+      gtag('event', ev, { page_path: location.pathname, link_url: a.href });
     });
   </script>
 
@@ -138,7 +140,7 @@
 <header class="mini-header">
   <div class="container">
     <a class="mini-logo" href="/" aria-label="C FERG Construtora e Pré-Moldados - página inicial">
-      <img src="/images/logo.png" alt="C FERG Construtora e Pré-Moldados" width="120" height="105" />
+      <img src="/images/logo-256.webp" alt="C FERG Construtora e Pré-Moldados" width="120" height="105" />
     </a>
     <a class="btn btn-primary" href="https://wa.me/5562991161389?text=Ol%C3%A1%21%20Tenho%20um%20projeto%20de%20galp%C3%A3o%20agr%C3%ADcola%20em%20Jata%C3%AD-GO%20e%20gostaria%20de%20falar%20com%20a%20equipe%20comercial." target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
@@ -304,6 +306,8 @@
     <p style="margin-top:6px">
       <a href="https://wa.me/5562991161389" target="_blank" rel="noopener">(62) 99116-1389</a>
       &nbsp;·&nbsp;
+      <a href="tel:+5562991161389">Ligar</a>
+      &nbsp;·&nbsp;
       <a href="https://instagram.com/cferg.construcoes" target="_blank" rel="noopener">@cferg.construcoes</a>
       &nbsp;·&nbsp;
       <a href="/">cfergconstrutora.com</a>
@@ -320,6 +324,7 @@
 </footer>
 
 <div class="mobile-bar">
+  <a class="call" href="tel:+5562991161389" aria-label="Ligar para a C FERG">📞 Ligar</a>
   <a href="https://wa.me/5562991161389?text=Ol%C3%A1%21%20Tenho%20um%20projeto%20de%20galp%C3%A3o%20agr%C3%ADcola%20em%20Jata%C3%AD-GO%20e%20gostaria%20de%20falar%20com%20a%20equipe%20comercial." target="_blank" rel="noopener">📲 Falar com a equipe comercial</a>
 </div>
 
