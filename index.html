@@ -9,7 +9,7 @@
   <meta name="keywords" content="galpão agrícola, galpão para máquinas agrícolas, barracão para colheitadeira, proteção de maquinário rural, pré-moldados, galpão industrial, concreto armado, Anápolis, Goiás, estruturas pré-moldadas" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cfergconstrutora.com/" />
-  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="icon" href="images/favicon-96.png" sizes="96x96" type="image/png" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Pré-Moldados em Anápolis-GO: Galpões, Pilares e Vigas | C FERG" />
   <meta property="og:description" content="Estruturas pré-moldadas para galpões industriais, comerciais e agrícolas. Proteja máquinas, tratores e colheitadeiras com galpões resistentes em Anápolis-GO." />
@@ -55,7 +55,7 @@
       "addressCountry": "BR"
     },
     "url": "https://cfergconstrutora.com/",
-    "areaServed": ["Anápolis", "Goiânia", "Nerópolis", "Trindade", "Goiás"],
+    "areaServed": ["Anápolis", "Goiânia", "Nerópolis", "Trindade", "Brasília", "Rio Verde", "Jataí", "Catalão", "Itumbiara", "Mineiros", "Luziânia", "Cristalina", "Goianésia", "Morrinhos", "Formosa", "Cuiabá", "Rondonópolis", "Sorriso", "Lucas do Rio Verde", "Sinop", "Primavera do Leste", {"@type": "State", "name": "Goiás"}, {"@type": "State", "name": "Mato Grosso"}],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -98,10 +98,10 @@
       },
       {
         "@type": "Question",
-        "name": "Vocês atendem somente Anápolis?",
+        "name": "Vocês atendem fora de Anápolis?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A C FERG atende Anápolis e região, avaliando cada projeto conforme localização, porte da obra e necessidades da estrutura."
+          "text": "A C FERG atende todo o estado de Goiás e, para projetos de médio e grande porte, Mato Grosso. A fábrica fica em Anápolis, e o frete, a montagem e o prazo são detalhados na proposta."
         }
       },
       {
@@ -816,7 +816,7 @@ footer img.logo,
     /* ===== AJUSTE: fontes 90%, imagens no tamanho do teste anterior, parceiros menores, rodapé compacto (remover este bloco para voltar) ===== */
     html{font-size:90%}
     :root{--section-pad:clamp(32px,4.4vw,56px)}
-    #hero{min-height:82svh}
+    #hero{min-height:82svh;padding-top:96px}
     .solucao-card{aspect-ratio:4/5}
     .problema-img{aspect-ratio:16/10}
     .producao-img{aspect-ratio:4/3}
@@ -898,6 +898,27 @@ footer img.logo,
     .faq-list{margin-top:0}
     @media(max-width:860px){.section-header{margin-bottom:26px}}
 
+    /* Ligar */
+    .nav-tel{font-family:var(--font-display);font-weight:700;letter-spacing:.04em;color:var(--white);font-size:.95rem;white-space:nowrap;padding:8px 10px}
+    .nav-tel:hover{color:var(--gold)}
+    @media(max-width:1180px){.nav-tel span{display:none}}
+    @media(max-width:860px){.nav-tel{display:none}}
+    @media(max-width:860px){
+      .mobile-lead-bar{display:flex !important;gap:10px}
+      .mobile-lead-bar a{flex:1;width:auto !important}
+      .mobile-lead-bar a.call{flex:0 0 30%;background:var(--navy) !important;color:var(--gold) !important}
+    }
+    /* Onde atendemos */
+    #onde-atendemos{background:var(--light);padding:var(--section-pad) 0}
+    .onde-card{background:var(--white);border:1px solid rgba(13,27,42,.1);border-top:3px solid var(--gold);border-radius:8px;padding:26px 24px;text-align:center;box-shadow:0 10px 30px rgba(13,27,42,.06)}
+    .onde-card h2{font-family:var(--font-display);font-weight:800;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.15;color:var(--navy);margin-bottom:16px}
+    .onde-grupo{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 12px;margin-top:10px}
+    .onde-grupo>span{font-family:var(--font-display);font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);min-width:96px}
+    .onde-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+    .onde-chips a{border:1px solid rgba(13,27,42,.18);border-radius:999px;padding:5px 12px;font-size:.84rem;color:var(--navy);transition:var(--transition)}
+    .onde-chips a:hover{border-color:var(--gold);background:var(--navy);color:var(--white)}
+    .onde-todas{display:inline-block;margin-top:16px;font-family:var(--font-display);font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:.88rem;color:var(--navy);text-decoration:underline;text-underline-offset:4px}
+
     /* Rodapé compacto */
     footer{padding:28px 0 16px}
     .footer-grid{grid-template-columns:1.3fr .8fr 1.7fr 1fr;gap:24px;padding-bottom:22px}
@@ -926,8 +947,10 @@ footer img.logo,
     gtag('js', new Date());
     gtag('config', 'G-D31ZWXHZ4N');
     document.addEventListener('click', function(e){
-      var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
-      if (a) { gtag('event', 'whatsapp_click', { page_path: location.pathname, link_url: a.href }); }
+      var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href^="tel:"]');
+      if (!a) return;
+      var ev = a.href.indexOf('tel:') === 0 ? 'phone_click' : 'whatsapp_click';
+      gtag('event', ev, { page_path: location.pathname, link_url: a.href });
     });
   </script>
 
@@ -939,7 +962,7 @@ footer img.logo,
   <div class="container">
     <nav aria-label="Navegação principal">
       <a href="#hero" class="nav-logo" aria-label="C FERG Construtora">
-        <img src="images/logo.png" width="512" height="449" alt="C FERG Construtora e Pré-Moldados logo" />
+        <img src="images/logo-256.webp" width="512" height="449" alt="C FERG Construtora e Pré-Moldados logo" />
       </a>
       <ul class="nav-links">
         <li><a href="#solucao">Soluções</a></li>
@@ -950,6 +973,7 @@ footer img.logo,
         <li><a href="#parceiros">Parceiros</a></li>
       </ul>
       <div class="nav-cta">
+        <a class="nav-tel" href="tel:+5562991161389" aria-label="Ligar para a C FERG">📞 <span>(62) 99116-1389</span></a>
         <a href="https://wa.me/5562991161389?text=Olá!%20Quero%20um%20orçamento." class="btn btn-primary" target="_blank" rel="noopener"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span> Solicitar orçamento</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
@@ -962,7 +986,7 @@ footer img.logo,
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
   <div class="mobile-logo">
-    <img src="images/logo.png" width="512" height="449" alt="C FERG logo" />
+    <img src="images/logo-256.webp" width="512" height="449" alt="C FERG logo" />
   </div>
   <a href="#solucao"          onclick="closeMenu()">Soluções</a>
   <a href="#projetos"         onclick="closeMenu()">Projetos</a>
@@ -1261,7 +1285,7 @@ footer img.logo,
         <img src="images/parceiros/zig-ferro-aco.png" alt="ZIG Ferro & Aço" width="215" height="100" loading="lazy" />
       </a>
       <a class="parceiro-card" href="https://wa.me/5562985897850?text=Olá,%20vi%20seu%20contato%20no%20site%20do%20seu%20parceiro%20C%20FERG%20Construtora." target="_blank" rel="noopener" title="Falar com São Caetano Materiais para Construção no WhatsApp">
-        <img src="images/parceiros/sao-caetano.png" alt="São Caetano Materiais para Construção" width="738" height="538" loading="lazy" />
+        <img src="images/parceiros/sao-caetano.webp" alt="São Caetano Materiais para Construção" width="400" height="292" loading="lazy" />
       </a>
       <a class="parceiro-card" href="https://wa.me/5562993284918?text=Olá,%20vi%20seu%20contato%20no%20site%20do%20seu%20parceiro%20C%20FERG%20Construtora." target="_blank" rel="noopener" title="Falar com SM Sol Maior Energia Solar no WhatsApp">
         <img src="images/parceiros/sm-sol-maior.jpg" alt="SM Sol Maior Energia Solar" width="575" height="608" loading="lazy" />
@@ -1293,8 +1317,8 @@ footer img.logo,
       </details>
 
       <details class="faq-item reveal">
-        <summary>Vocês atendem somente Anápolis?</summary>
-        <p>A C FERG atende Anápolis e região, avaliando cada projeto conforme localização, porte da obra e necessidades da estrutura.</p>
+        <summary>Vocês atendem fora de Anápolis?</summary>
+        <p>A C FERG atende todo o estado de Goiás e, para projetos de médio e grande porte, Mato Grosso. A fábrica fica em Anápolis, e o frete, a montagem e o prazo são detalhados na proposta.</p>
       </details>
 
       <details class="faq-item reveal">
@@ -1311,6 +1335,19 @@ footer img.logo,
         <summary>A empresa trabalha com produção própria?</summary>
         <p>Sim. A produção própria de estruturas pré-moldadas ajuda no controle de qualidade, planejamento e andamento da obra.</p>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- ONDE ATENDEMOS -->
+<section id="onde-atendemos" aria-labelledby="onde-h2">
+  <div class="container">
+    <div class="onde-card reveal">
+      <div class="tag">Onde atendemos</div>
+      <h2 id="onde-h2">Fábrica em Anápolis, atendimento em Goiás e Mato Grosso.</h2>
+      <div class="onde-grupo"><span>Goiás</span><div class="onde-chips"><a href="/pre-moldados-anapolis">Anápolis</a><a href="/goiania">Goiânia</a><a href="/neropolis">Nerópolis</a><a href="/galpao-agricola-rio-verde-go">Rio Verde</a><a href="/galpao-agricola-jatai-go">Jataí</a><a href="/galpao-agricola-catalao-go">Catalão</a><a href="/galpao-agricola-itumbiara-go">Itumbiara</a><a href="/galpao-agricola-mineiros-go">Mineiros</a><a href="/galpao-agricola-luziania-go">Luziânia</a><a href="/galpao-agricola-cristalina-go">Cristalina</a><a href="/galpao-agricola-goianesia-go">Goianésia</a><a href="/galpao-agricola-morrinhos-go">Morrinhos</a><a href="/galpao-agricola-formosa-go">Formosa</a></div></div>
+      <div class="onde-grupo"><span>Mato Grosso</span><div class="onde-chips"><a href="/galpao-agricola-cuiaba-mt">Cuiabá</a><a href="/galpao-agricola-rondonopolis-mt">Rondonópolis</a><a href="/galpao-agricola-sorriso-mt">Sorriso</a><a href="/galpao-agricola-lucas-do-rio-verde-mt">Lucas do Rio Verde</a><a href="/galpao-agricola-sinop-mt">Sinop</a><a href="/galpao-agricola-primavera-do-leste-mt">Primavera do Leste</a></div></div>
+      <a class="onde-todas" href="/areas-de-atendimento">Ver todas as áreas de atendimento →</a>
     </div>
   </div>
 </section>
@@ -1343,7 +1380,7 @@ footer img.logo,
         <div class="tag">Orçamento rápido</div>
         <h2>Conte rapidamente o que você precisa construir.</h2>
         <p>Preencha os dados e envie sua solicitação direto para o WhatsApp da C FERG. Quanto mais informações, mais rápido conseguimos orientar seu orçamento.</p>
-        <img src="images/mascote-cferg.png" alt="Mascote C FERG Construtora" class="mascote-form" width="356" height="617" loading="lazy" />
+        <img src="images/mascote-cferg.webp" alt="Mascote C FERG Construtora" class="mascote-form" width="356" height="617" loading="lazy" />
       </div>
       <form class="lead-form reveal reveal-delay-1" onsubmit="sendLeadForm(event)">
         <label>Nome
@@ -1384,7 +1421,7 @@ footer img.logo,
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="images/logo.png" width="512" height="449" alt="C FERG Construtora e Pré-Moldados" class="footer-logo" />
+        <img src="images/logo-256.webp" width="512" height="449" alt="C FERG Construtora e Pré-Moldados" class="footer-logo" />
         <p>Especialistas em estruturas pré-moldadas de concreto armado e construção de galpões industriais em Anápolis-GO. Produção própria, equipe especializada e entrega no prazo.</p>
         <p class="cnpj">CNPJ: 63.347.754/0001-32</p>
       </div>
@@ -1416,6 +1453,7 @@ footer img.logo,
       <div class="footer-col">
         <h4>Contato</h4>
         <ul>
+          <li><a href="tel:+5562991161389">📞 Ligar: (62) 99116-1389</a></li>
           <li><a href="https://wa.me/5562991161389" target="_blank" rel="noopener"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span> (62) 99116-1389</a></li>
           <li><a href="https://instagram.com/cferg.construcoes" target="_blank" rel="noopener"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4A5.8 5.8 0 0122 7.8v8.4a5.8 5.8 0 01-5.8 5.8H7.8A5.8 5.8 0 012 16.2V7.8A5.8 5.8 0 017.8 2zm0 2A3.8 3.8 0 004 7.8v8.4A3.8 3.8 0 007.8 20h8.4a3.8 3.8 0 003.8-3.8V7.8A3.8 3.8 0 0016.2 4H7.8zm4.2 3.2a4.8 4.8 0 110 9.6 4.8 4.8 0 010-9.6zm0 2a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6zM17.2 6.6a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"/></svg></span> @cferg.construcoes</a></li>
           <li><a href="https://maps.app.goo.gl/PnkHLLMLa22E7NaZ8" target="_blank" rel="noopener"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg></span> Anápolis — GO</a></li>
@@ -1423,7 +1461,7 @@ footer img.logo,
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 C FERG Construtora e Pré-Moldados. Todos os direitos reservados.</p>
+      <p>© <span id="ano">2026</span> C FERG Construtora e Pré-Moldados. Todos os direitos reservados.</p>
       <div class="footer-social">
         <a href="https://instagram.com/cferg.construcoes" target="_blank" rel="noopener"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4A5.8 5.8 0 0122 7.8v8.4a5.8 5.8 0 01-5.8 5.8H7.8A5.8 5.8 0 012 16.2V7.8A5.8 5.8 0 017.8 2zm0 2A3.8 3.8 0 004 7.8v8.4A3.8 3.8 0 007.8 20h8.4a3.8 3.8 0 003.8-3.8V7.8A3.8 3.8 0 0016.2 4H7.8zm4.2 3.2a4.8 4.8 0 110 9.6 4.8 4.8 0 010-9.6zm0 2a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6zM17.2 6.6a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"/></svg></span> Instagram</a>
       </div>
@@ -1538,8 +1576,10 @@ ${especificacoes}`;
 
 <!-- BARRA FIXA MOBILE -->
 <div class="mobile-lead-bar">
-  <a href="https://wa.me/5562991161389?text=Olá!%20Quero%20solicitar%20um%20orçamento%20para%20pré-moldados." target="_blank" rel="noopener">📲 Solicitar orçamento pelo WhatsApp</a>
+  <a class="call" href="tel:+5562991161389" aria-label="Ligar para a C FERG">📞 Ligar</a>
+  <a href="https://wa.me/5562991161389?text=Olá!%20Quero%20solicitar%20um%20orçamento%20para%20pré-moldados." target="_blank" rel="noopener">📲 Orçamento no WhatsApp</a>
 </div>
 
+<script>var _a=document.getElementById('ano');if(_a)_a.textContent=new Date().getFullYear();</script>
 </body>
 </html>
