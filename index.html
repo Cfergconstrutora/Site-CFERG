@@ -864,11 +864,13 @@ footer img.logo,
 
     #minicarregadeira{background:var(--light)}
 
-    .agro-ilustra{max-width:880px;margin:26px auto 0;text-align:center}
-    .agro-ilustra img{width:100%;height:auto;border-radius:8px;box-shadow:var(--shadow)}
-    .agro-ilustra figcaption{margin-top:10px;font-size:.85rem;color:var(--muted)}
-    .agro-ilustra figcaption a{color:var(--navy);font-weight:700;text-decoration:underline;text-underline-offset:3px}
-    .agro-ilustra figcaption span{opacity:.8}
+    /* Galpões agrícolas: duas fotos no mesmo cartão, inteiras */
+    #para-quem .agro-layout{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) !important;align-items:stretch !important}
+    #para-quem .agro-image-wrap{display:flex !important;flex-direction:column;gap:10px;padding:10px;min-height:0 !important;align-self:stretch}
+    #para-quem .agro-image-wrap img{width:100% !important;height:auto !important;min-height:0 !important;max-height:none !important;object-fit:contain !important;border-radius:6px !important;display:block}
+    .agro-img-item{position:relative;display:block;overflow:hidden;border-radius:6px}
+    .agro-img-tag{position:absolute;left:10px;bottom:10px;background:rgba(13,27,42,.85);color:var(--white);border-left:3px solid var(--gold);padding:6px 10px;border-radius:4px;font-family:var(--font-display);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    @media(max-width:1000px){#para-quem .agro-layout{grid-template-columns:1fr !important}}
 
     /* Rodapé compacto */
     footer{padding:28px 0 16px}
@@ -1124,14 +1126,16 @@ Para ativar:
       <strong>O prejuízo de deixar seu maquinário exposto pode ser maior que o investimento em protegê-lo.</strong>
   </div>
   <div class="agro-image-wrap">
-      <img src="images/galpao-agricola.webp" width="1200" height="690" alt="Galpão agrícola para proteção de máquinas e equipamentos">
+      <div class="agro-img-item">
+        <img src="images/galpao-agricola.webp" width="1200" height="690" alt="Galpão agrícola para proteção de máquinas e equipamentos">
+        <span class="agro-img-tag">Abrigo para máquinas</span>
+      </div>
+      <a class="agro-img-item" href="/compost-barn" aria-label="Ver compost barn pré-moldado">
+        <img src="images/compost-barn-estrutura-pre-moldada-ilustracao.webp" width="1024" height="329" alt="Ilustração de compost barn em estrutura pré-moldada: cobertura ampla, corredor central de alimentação e gado leiteiro" loading="lazy">
+        <span class="agro-img-tag">Compost barn · imagem ilustrativa</span>
+      </a>
   </div>
 </div>
-
-    <figure class="agro-ilustra reveal">
-      <img src="images/compost-barn-estrutura-pre-moldada-ilustracao.webp" width="1024" height="329" alt="Ilustração de compost barn em estrutura pré-moldada: cobertura ampla, corredor central de alimentação e gado leiteiro" loading="lazy" />
-      <figcaption>Compost barn em estrutura pré-moldada. <a href="/compost-barn">Saiba mais</a> <span>· Imagem ilustrativa</span></figcaption>
-    </figure>
 
       
 
