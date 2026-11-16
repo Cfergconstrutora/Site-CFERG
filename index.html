@@ -815,7 +815,7 @@ footer img.logo,
 
     /* ===== AJUSTE: fontes 90%, imagens no tamanho do teste anterior, parceiros menores, rodapé compacto (remover este bloco para voltar) ===== */
     html{font-size:90%}
-    :root{--section-pad:clamp(40px,6vw,80px)}
+    :root{--section-pad:clamp(32px,4.4vw,56px)}
     #hero{min-height:82svh}
     .solucao-card{aspect-ratio:4/5}
     .problema-img{aspect-ratio:16/10}
@@ -890,6 +890,13 @@ footer img.logo,
     .prova-card .trust-item+.trust-item{border-left:1px solid rgba(255,255,255,.12)}
     .prova-card .trust-num{font-size:2rem}
     @media(max-width:860px){.prova-card .trust-bar{row-gap:14px}.prova-card .trust-item:nth-child(3){border-left:0}}
+
+    /* Espaçamento: menos vazio entre seções e entre título e conteúdo */
+    .section-header{margin-bottom:36px}
+    #projetos .gallery-grid{margin-top:0}
+    #para-quem .lead-cards{margin-top:0 !important}
+    .faq-list{margin-top:0}
+    @media(max-width:860px){.section-header{margin-bottom:26px}}
 
     /* Rodapé compacto */
     footer{padding:28px 0 16px}
