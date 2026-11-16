@@ -879,6 +879,18 @@ footer img.logo,
     .agro-link:hover{color:var(--gold2)}
     @media(max-width:1000px){#para-quem .agro-layout{grid-template-columns:1fr !important}}
 
+    /* Prova social: um único cartão */
+    #prova-social{padding:36px 0}
+    .prova-card{background:linear-gradient(135deg,var(--navy),var(--steel));border-left:4px solid var(--gold);border-radius:8px;padding:28px 24px 22px;text-align:center;box-shadow:var(--shadow);color:var(--white)}
+    .prova-card .tag{margin-bottom:12px}
+    .prova-card h2{font-family:var(--font-display);font-weight:800;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.12;color:var(--white);margin-bottom:8px}
+    .prova-card p{color:rgba(255,255,255,.7);max-width:640px;margin-inline:auto}
+    .prova-card .trust-bar{background:none;gap:0;margin:20px 0 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);border-radius:0}
+    .prova-card .trust-item{background:none;padding:6px 10px}
+    .prova-card .trust-item+.trust-item{border-left:1px solid rgba(255,255,255,.12)}
+    .prova-card .trust-num{font-size:2rem}
+    @media(max-width:860px){.prova-card .trust-bar{row-gap:14px}.prova-card .trust-item:nth-child(3){border-left:0}}
+
     /* Rodapé compacto */
     footer{padding:28px 0 16px}
     .footer-grid{grid-template-columns:1.3fr .8fr 1.7fr 1fr;gap:24px;padding-bottom:22px}
@@ -1220,21 +1232,16 @@ Para ativar:
 <!-- PROVA SOCIAL -->
 <section id="prova-social" aria-labelledby="prova-h2">
   <div class="container">
-
-    <div class="lead-proof-note reveal">
-      <strong>Obras comerciais entregues em Anápolis e região.</strong>
-      <span>Produção própria, equipe especializada e acompanhamento direto para reduzir atrasos e retrabalho.</span>
-    </div>
-
-    <div class="section-header dark reveal">
+    <div class="prova-card reveal">
       <div class="tag">Por que nos escolher</div>
-      <h2 id="prova-h2">Números que sustentam nossa reputação.</h2>
-    </div>
-    <div class="trust-bar reveal">
-      <div class="trust-item"><div class="trust-num">Galpões</div><div class="trust-label">Foco industrial</div></div>
-      <div class="trust-item"><div class="trust-num">+5</div><div class="trust-label">Anos de mercado</div></div>
-      <div class="trust-item"><div class="trust-num">100%</div><div class="trust-label">Produção própria</div></div>
-      <div class="trust-item"><div class="trust-num">GO</div><div class="trust-label">Todo estado de Goiás</div></div>
+      <h2 id="prova-h2">Obras comerciais entregues em Anápolis e região.</h2>
+      <p>Equipe especializada e acompanhamento direto para reduzir atrasos e retrabalho.</p>
+      <div class="trust-bar">
+        <div class="trust-item"><div class="trust-num">Galpões</div><div class="trust-label">Foco industrial</div></div>
+        <div class="trust-item"><div class="trust-num">+5</div><div class="trust-label">Anos de mercado</div></div>
+        <div class="trust-item"><div class="trust-num">100%</div><div class="trust-label">Produção própria</div></div>
+        <div class="trust-item"><div class="trust-num">GO · MT</div><div class="trust-label">Estados atendidos</div></div>
+      </div>
     </div>
   </div>
 </section>
