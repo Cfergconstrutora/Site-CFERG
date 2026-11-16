@@ -813,24 +813,67 @@ footer img.logo,
 }
 
 
-    /* ===== TESTE: fontes e imagens menores (remover este bloco para voltar ao tamanho anterior) ===== */
+    /* ===== AJUSTE: fontes 90%, imagens menores e SEM corte, rodapé compacto (remover este bloco para voltar) ===== */
     html{font-size:90%}
     :root{--section-pad:clamp(40px,6vw,80px)}
     #hero{min-height:82svh}
-    .solucao-card{aspect-ratio:4/5}
-    .problema-img{aspect-ratio:16/10}
-    .producao-img{aspect-ratio:4/3}
-    .producao-img:first-child{aspect-ratio:16/8}
-    .mini-img-wrap{max-width:420px;margin-inline:auto}
+
+    /* Nossas soluções: foto inteira ao lado do texto */
+    .solucoes-grid{grid-template-columns:repeat(2,1fr) !important;gap:14px !important;width:min(1100px,100% - 32px);margin-inline:auto}
+    .solucao-card{aspect-ratio:auto !important;display:flex;align-items:center;gap:16px;background:var(--navy2);padding:14px;border-radius:8px;overflow:visible !important}
+    .solucao-card img{position:static !important;width:auto !important;height:auto !important;max-width:44% !important;max-height:230px !important;flex:0 0 auto;border-radius:6px;object-fit:contain !important;transform:none !important}
+    .solucao-card:hover img{transform:none !important}
+    .solucao-overlay{display:none !important}
+    .solucao-content{position:static !important;padding:0 !important;flex:1;min-width:0}
+    .solucao-badge{top:22px;left:22px}
+
+    /* Problema */
+    .problema-visual{width:fit-content;margin-inline:auto}
+    .problema-img{aspect-ratio:auto !important;width:auto !important;height:auto !important;max-width:100%;max-height:360px;object-fit:contain !important}
+
+    /* Galpões agrícolas (Para quem é) */
+    #para-quem .agro-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) !important;align-items:center !important}
+    #para-quem .agro-image-wrap{min-height:0 !important;align-self:center}
+    #para-quem .agro-image-wrap img{height:auto !important;min-height:0 !important;max-height:none !important;object-fit:contain !important}
+    @media(max-width:1000px){#para-quem .agro-layout{grid-template-columns:1fr !important}}
+
+    /* Produção: três fotos em linha, inteiras */
+    .producao-imgs{display:flex !important;gap:8px;align-items:flex-start;max-width:420px;margin-inline:auto}
+    .producao-img,.producao-img:first-child{flex:1 1 0;min-width:0;width:100% !important;height:auto !important;aspect-ratio:auto !important;grid-column:auto !important;object-fit:contain}
+
+    /* Projetos */
+    #projetos .gallery-grid{max-width:960px;margin-inline:auto;gap:14px !important;align-items:start}
+    #projetos .gallery-item img{height:auto !important;min-height:0 !important;object-fit:contain !important}
+    @media(max-width:600px){#projetos .gallery-grid{max-width:320px}}
+
+    /* Minicarregadeira */
+    .mini-img-wrap{max-width:340px;margin-inline:auto}
     .mini-img{height:auto;object-fit:contain}
-    #projetos .gallery-item img{height:200px;min-height:200px}
-    .agro-image-wrap img,#para-quem .agro-image-wrap img{min-height:260px !important;max-height:340px !important;object-fit:cover}
+
+    /* Solucoes no celular: foto menor ao lado do texto */
     @media(max-width:860px){
-      .agro-image-wrap img,#para-quem .agro-image-wrap img{min-height:200px !important;max-height:240px !important}
-      #projetos .gallery-item img{height:170px;min-height:170px}
-      .solucao-card{aspect-ratio:4/3}
+      .solucoes-grid{grid-template-columns:1fr !important}
+      .solucao-card img{max-width:40% !important;max-height:200px !important}
     }
-    /* ===== fim do teste ===== */
+
+    /* Rodapé compacto */
+    footer{padding:28px 0 16px}
+    .footer-grid{grid-template-columns:1.3fr .8fr 1.7fr 1fr;gap:24px;padding-bottom:22px}
+    .footer-brand p{margin-top:10px;line-height:1.55}
+    .footer-brand .cnpj{margin-top:8px}
+    .footer-logo{height:40px}
+    .footer-col h4{margin-bottom:10px}
+    .footer-col li{margin-bottom:6px}
+    .footer-col:nth-child(3) ul{columns:2;column-gap:22px}
+    .footer-col:nth-child(3) li{break-inside:avoid}
+    .footer-bottom{padding-top:16px}
+    @media(max-width:860px){
+      .footer-grid{grid-template-columns:1fr 1fr !important;gap:20px}
+      .footer-brand{grid-column:span 2 !important}
+      .footer-col:nth-child(3){grid-column:span 2;order:5}
+    }
+    @media(max-width:520px){.footer-col li{margin-bottom:5px}.footer-col a{font-size:.82rem}.footer-col:nth-child(3) ul{column-gap:14px}}
+    /* ===== fim do ajuste ===== */
 </style>
 
 <!-- GOOGLE ANALYTICS / SEARCH CONSOLE
@@ -1047,25 +1090,6 @@ Para ativar:
       
 
 </div>
-</section>
-
-<!-- BENEFÍCIOS -->
-<section id="beneficios" aria-labelledby="beneficios-h2">
-  <div class="container">
-    <div class="section-header dark reveal">
-      <div class="tag">Por que a C FERG</div>
-      <h2 id="beneficios-h2">Vantagens que aparecem no prazo e no resultado.</h2>
-      <p>Nossa operação verticalizada elimina intermediários e garante controle total do processo.</p>
-    </div>
-    <div class="beneficios-grid">
-      <div class="beneficio-card reveal"><div class="beneficio-icon">🏭</div><h3>Produção 100% própria</h3><p>Fábrica própria garante rastreabilidade, padrão constante e sem dependência de terceiros.</p></div>
-      <div class="beneficio-card reveal reveal-delay-1"><div class="beneficio-icon">⏱️</div><h3>Prazo que se cumpre</h3><p>Controle interno de cada etapa: armação, concretagem, cura e montagem. Você recebe o que combinou, quando combinou.</p></div>
-      <div class="beneficio-card reveal reveal-delay-2"><div class="beneficio-icon">🔬</div><h3>Controle de qualidade</h3><p>Resistência, precisão e segurança em cada peça. Concreto de alta performance e armação especificada por técnicos.</p></div>
-      <div class="beneficio-card reveal reveal-delay-3"><div class="beneficio-icon">🤝</div><h3>Equipe especializada</h3><p>Time próprio de montagem treinado para trabalhar com segurança e eficiência em qualquer porte de obra.</p></div>
-      <div class="beneficio-card reveal reveal-delay-4"><div class="beneficio-icon"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg></span></div><h3>Atendimento regional</h3><p>Base em Anápolis-GO com capacidade de atender toda a região. Logística planejada para minimizar custos de transporte.</p></div>
-      <div class="beneficio-card reveal"><div class="beneficio-icon">💬</div><h3>Orçamento transparente</h3><p>Sem letras miúdas. Escopo claro, com quantitativos e valores definidos antes de qualquer compromisso.</p></div>
-    </div>
-  </div>
 </section>
 
 <!-- PROJETOS -->
