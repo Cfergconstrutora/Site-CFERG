@@ -812,6 +812,27 @@ footer img.logo,
   #para-quem .agro-image-wrap img{min-height:300px !important;max-height:none !important}
 }
 
+
+    /* ===== abas, carrossel mobile e "ver mais" ===== */
+    .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 0 8px}
+    .tab-btn{font-family:var(--font-display);font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:12px 22px;border:2px solid var(--navy);background:transparent;color:var(--navy);border-radius:var(--radius);cursor:pointer;transition:var(--transition)}
+    .tab-btn:hover{border-color:var(--gold)}
+    .tab-btn[aria-selected="true"]{background:var(--navy);color:var(--white);border-color:var(--navy);box-shadow:inset 0 -3px 0 var(--gold)}
+    .tab-btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+    .tab-panel[hidden]{display:none}
+    .tab-panel .section-header{margin-top:40px}
+    .more-details summary{cursor:pointer;list-style:none;display:inline-block;margin-bottom:20px;color:var(--gold);font-family:var(--font-display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--gold);border-radius:var(--radius);padding:10px 18px}
+    .more-details summary::-webkit-details-marker{display:none}
+    .more-details summary::after{content:' +'}
+    .more-details[open] summary::after{content:' \2212'}
+    @media(max-width:860px){
+      .tab-btn{flex:1 1 auto;padding:12px 14px;font-size:.92rem;text-align:center}
+      #projetos .gallery-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:12px}
+      #projetos .gallery-item{flex:0 0 82%;scroll-snap-align:center}
+      #projetos .gallery-item.reveal{opacity:1;transform:none}
+      .producao-imgs{display:flex !important;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+      .producao-imgs .producao-img,.producao-imgs .producao-img:first-child{flex:0 0 68%;width:68%;aspect-ratio:3/4;scroll-snap-align:center}
+    }
 </style>
 
 <!-- GOOGLE ANALYTICS / SEARCH CONSOLE
@@ -988,9 +1009,16 @@ Para ativar:
 </section>
 
 
-<!-- PARA QUEM É -->
-<section id="para-quem" class="lead-section">
+<!-- PARA QUEM É / AGRO / POR QUE A C FERG (abas) -->
+<section id="para-quem" class="lead-section tabs-section">
   <div class="container">
+    <div class="tabs" role="tablist" aria-label="Conheça a C FERG">
+      <button type="button" class="tab-btn" role="tab" id="tabbtn-quem" aria-controls="tab-quem" aria-selected="true">Para quem é</button>
+      <button type="button" class="tab-btn" role="tab" id="tabbtn-agro" aria-controls="tab-agro" aria-selected="false" tabindex="-1">Galpões agrícolas</button>
+      <button type="button" class="tab-btn" role="tab" id="tabbtn-beneficios" aria-controls="tab-beneficios" aria-selected="false" tabindex="-1">Por que a C FERG</button>
+    </div>
+
+    <div class="tab-panel" role="tabpanel" id="tab-quem" aria-labelledby="tabbtn-quem">
     <div class="section-header dark reveal">
       <div class="tag">Para quem é</div>
       <h2>Estruturas pré-moldadas para quem precisa construir com segurança e velocidade.</h2>
@@ -1013,6 +1041,10 @@ Para ativar:
     
 </div>
 
+
+    </div>
+
+    <div class="tab-panel" role="tabpanel" id="tab-agro" aria-labelledby="tabbtn-agro" hidden>
     <div class="agro-layout reveal">
   <div class="agro-copy-box">
       <div class="tag">Galpões Agrícolas</div>
@@ -1025,14 +1057,9 @@ Para ativar:
   </div>
 </div>
 
-      
+    </div>
 
-</div>
-</section>
-
-<!-- BENEFÍCIOS -->
-<section id="beneficios" aria-labelledby="beneficios-h2">
-  <div class="container">
+    <div class="tab-panel" role="tabpanel" id="tab-beneficios" aria-labelledby="tabbtn-beneficios" hidden>
     <div class="section-header dark reveal">
       <div class="tag">Por que a C FERG</div>
       <h2 id="beneficios-h2">Vantagens que aparecem no prazo e no resultado.</h2>
@@ -1045,6 +1072,7 @@ Para ativar:
       <div class="beneficio-card reveal reveal-delay-3"><div class="beneficio-icon">🤝</div><h3>Equipe especializada</h3><p>Time próprio de montagem treinado para trabalhar com segurança e eficiência em qualquer porte de obra.</p></div>
       <div class="beneficio-card reveal reveal-delay-4"><div class="beneficio-icon"><span class="icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg></span></div><h3>Atendimento regional</h3><p>Base em Anápolis-GO com capacidade de atender toda a região. Logística planejada para minimizar custos de transporte.</p></div>
       <div class="beneficio-card reveal"><div class="beneficio-icon">💬</div><h3>Orçamento transparente</h3><p>Sem letras miúdas. Escopo claro, com quantitativos e valores definidos antes de qualquer compromisso.</p></div>
+    </div>
     </div>
   </div>
 </section>
@@ -1075,17 +1103,6 @@ Para ativar:
 </section>
 
 
-<!-- CTA APÓS OBRAS -->
-<section id="cta-obras" class="lead-cta-obras">
-  <div class="container">
-    <div class="lead-cta-box reveal">
-      <h2>Gostou desse padrão de obra?</h2>
-      <p>Peça um orçamento para sua estrutura pré-moldada e receba um atendimento direto pelo WhatsApp.</p>
-      <a href="https://wa.me/5562991161389?text=Olá!%20Gostei%20das%20obras%20do%20site%20e%20quero%20solicitar%20um%20orçamento%20para%20minha%20estrutura." class="btn btn-primary" target="_blank" rel="noopener">📲 Solicitar orçamento pelo WhatsApp</a>
-    </div>
-  </div>
-</section>
-
 <!-- PRODUÇÃO -->
 <section id="producao" aria-labelledby="producao-h2">
   <div class="container">
@@ -1094,12 +1111,15 @@ Para ativar:
         <div class="tag">Produção própria</div>
         <h2 id="producao-h2">Qualidade que começa muito antes da montagem.</h2>
         <p>Diferente de revendedores, produzimos cada peça internamente — com controle total de insumos, armação e cura do concreto.</p>
+        <details class="more-details" id="producao-etapas" open>
+          <summary>Ver as 4 etapas da produção</summary>
         <div class="process-steps">
           <div class="process-step"><div class="step-num">01</div><div class="step-body"><h4>Ferragem armada</h4><p>Armação dimensionada conforme especificação técnica. Zero improviso.</p></div></div>
           <div class="process-step"><div class="step-num">02</div><div class="step-body"><h4>Formas e moldes</h4><p>Formas próprias garantem precisão dimensional e acabamento uniforme em todas as peças.</p></div></div>
           <div class="process-step"><div class="step-num">03</div><div class="step-body"><h4>Vigas pré-moldadas</h4><p>Concreto de alta resistência, com cura controlada antes do transporte e montagem.</p></div></div>
           <div class="process-step"><div class="step-num">04</div><div class="step-body"><h4>Montagem especializada</h4><p>Equipe própria, equipamentos adequados e foco em segurança e prazo.</p></div></div>
         </div>
+        </details>
       </div>
       <div class="producao-imgs reveal reveal-delay-2">
         <img src="images/ferragem-armada-pilares.webp" width="720" height="1280" alt="Ferragem armada para pilares pré-moldados" class="producao-img" loading="lazy" />
@@ -1195,11 +1215,6 @@ Para ativar:
       </div>
           </div>
   
-    <div class="faq-cta reveal">
-      <h3>Tirou suas dúvidas? Agora transforme seu projeto em orçamento.</h3>
-      <p>Envie as informações da sua obra e fale direto com a C FERG Construtora e Pré-Moldados pelo WhatsApp.</p>
-      <a href="https://wa.me/5562991161389?text=Olá!%20Li%20as%20dúvidas%20frequentes%20no%20site%20e%20quero%20solicitar%20um%20orçamento." class="btn btn-primary" target="_blank" rel="noopener">Solicitar orçamento agora</a>
-    </div>
 
   </div>
 </section>
@@ -1404,6 +1419,41 @@ Para ativar:
     entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, {threshold:0.1,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Abas (Para quem é / Galpões agrícolas / Por que a C FERG)
+  (function(){
+    const btns=[...document.querySelectorAll('.tabs .tab-btn')];
+    if(!btns.length) return;
+    function show(btn,focus){
+      btns.forEach(b=>{
+        const on=b===btn;
+        b.setAttribute('aria-selected',on?'true':'false');
+        b.tabIndex=on?0:-1;
+        const p=document.getElementById(b.getAttribute('aria-controls'));
+        p.hidden=!on;
+        if(on) p.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+      });
+      if(focus) btn.focus();
+    }
+    btns.forEach((b,i)=>{
+      b.addEventListener('click',()=>show(b));
+      b.addEventListener('keydown',e=>{
+        if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+          e.preventDefault();
+          const n=btns[(i+(e.key==='ArrowRight'?1:btns.length-1))%btns.length];
+          show(n,true);
+        }
+      });
+    });
+    const map={'#beneficios':'tabbtn-beneficios','#tab-beneficios':'tabbtn-beneficios','#tab-agro':'tabbtn-agro','#tab-quem':'tabbtn-quem'};
+    const h=map[location.hash]; if(h) show(document.getElementById(h));
+  })();
+
+  // "Ver as etapas": aberto no computador, recolhido no celular
+  (function(){
+    const d=document.getElementById('producao-etapas');
+    if(d && window.matchMedia('(max-width:860px)').matches) d.open=false;
+  })();
 
   // Modal
   function openModal(src) {
