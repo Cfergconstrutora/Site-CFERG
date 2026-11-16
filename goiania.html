@@ -144,6 +144,18 @@
     :root{--section-pad:clamp(32px,4.4vw,56px)}
     /* ===== fim do teste ===== */
 </style>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D31ZWXHZ4N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D31ZWXHZ4N');
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
+      if (a) { gtag('event', 'whatsapp_click', { page_path: location.pathname, link_url: a.href }); }
+    });
+  </script>
 </head>
 <body>
 
