@@ -116,3 +116,11 @@ footer .foot-links{margin-top:10px;display:flex;flex-wrap:wrap;justify-content:c
 .split-text h2{font-family:var(--font-display);font-weight:800;font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--navy);line-height:1.12;margin-bottom:16px}
 .split-text p{color:var(--muted);font-size:1.05rem;margin-bottom:26px}
 @media (max-width:860px){.split{grid-template-columns:1fr}.split-img figcaption{left:8px}}
+
+/* ===== TESTE: fontes e imagens menores (remover este bloco para voltar) ===== */
+html{font-size:90%}
+:root{--section-pad:clamp(40px,6vw,80px)}
+#hero{min-height:72svh}
+.gallery-item{aspect-ratio:16/10}
+.split-img img{aspect-ratio:1/1}
+/* ===== fim do teste ===== */
