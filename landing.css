@@ -124,3 +124,7 @@ html{font-size:90%}
 .gallery-item{aspect-ratio:16/10}
 .split-img img{aspect-ratio:1/1}
 /* ===== fim do teste ===== */
+
+.figure-wide{max-width:880px;margin:0 auto;text-align:center}
+.figure-wide img{width:100%;height:auto;border-radius:8px;box-shadow:var(--shadow)}
+.figure-wide figcaption{margin-top:10px;font-size:.85rem;color:var(--muted)}
