@@ -813,48 +813,30 @@ footer img.logo,
 }
 
 
-    /* ===== AJUSTE: fontes 90%, imagens menores e SEM corte, rodapé compacto (remover este bloco para voltar) ===== */
+    /* ===== AJUSTE: fontes 90%, imagens no tamanho do teste anterior, parceiros menores, rodapé compacto (remover este bloco para voltar) ===== */
     html{font-size:90%}
     :root{--section-pad:clamp(40px,6vw,80px)}
     #hero{min-height:82svh}
-
-    /* Nossas soluções: foto inteira ao lado do texto */
-    .solucoes-grid{grid-template-columns:repeat(2,1fr) !important;gap:14px !important;width:min(1100px,100% - 32px);margin-inline:auto}
-    .solucao-card{aspect-ratio:auto !important;display:flex;align-items:center;gap:16px;background:var(--navy2);padding:14px;border-radius:8px;overflow:visible !important}
-    .solucao-card img{position:static !important;width:auto !important;height:auto !important;max-width:44% !important;max-height:230px !important;flex:0 0 auto;border-radius:6px;object-fit:contain !important;transform:none !important}
-    .solucao-card:hover img{transform:none !important}
-    .solucao-overlay{display:none !important}
-    .solucao-content{position:static !important;padding:0 !important;flex:1;min-width:0}
-    .solucao-badge{top:22px;left:22px}
-
-    /* Problema */
-    .problema-visual{width:fit-content;margin-inline:auto}
-    .problema-img{aspect-ratio:auto !important;width:auto !important;height:auto !important;max-width:100%;max-height:360px;object-fit:contain !important}
-
-    /* Galpões agrícolas (Para quem é) */
-    #para-quem .agro-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) !important;align-items:center !important}
-    #para-quem .agro-image-wrap{min-height:0 !important;align-self:center}
-    #para-quem .agro-image-wrap img{height:auto !important;min-height:0 !important;max-height:none !important;object-fit:contain !important}
-    @media(max-width:1000px){#para-quem .agro-layout{grid-template-columns:1fr !important}}
-
-    /* Produção: três fotos em linha, inteiras */
-    .producao-imgs{display:flex !important;gap:8px;align-items:flex-start;max-width:420px;margin-inline:auto}
-    .producao-img,.producao-img:first-child{flex:1 1 0;min-width:0;width:100% !important;height:auto !important;aspect-ratio:auto !important;grid-column:auto !important;object-fit:contain}
-
-    /* Projetos */
-    #projetos .gallery-grid{max-width:960px;margin-inline:auto;gap:14px !important;align-items:start}
-    #projetos .gallery-item img{height:auto !important;min-height:0 !important;object-fit:contain !important}
-    @media(max-width:600px){#projetos .gallery-grid{max-width:320px}}
-
-    /* Minicarregadeira */
-    .mini-img-wrap{max-width:340px;margin-inline:auto}
+    .solucao-card{aspect-ratio:4/5}
+    .problema-img{aspect-ratio:16/10}
+    .producao-img{aspect-ratio:4/3}
+    .producao-img:first-child{aspect-ratio:16/8}
+    .mini-img-wrap{max-width:420px;margin-inline:auto}
     .mini-img{height:auto;object-fit:contain}
-
-    /* Solucoes no celular: foto menor ao lado do texto */
+    #projetos .gallery-item img{height:200px;min-height:200px}
+    .agro-image-wrap img,#para-quem .agro-image-wrap img{min-height:260px !important;max-height:340px !important;object-fit:cover}
     @media(max-width:860px){
-      .solucoes-grid{grid-template-columns:1fr !important}
-      .solucao-card img{max-width:40% !important;max-height:200px !important}
+      .agro-image-wrap img,#para-quem .agro-image-wrap img{min-height:200px !important;max-height:240px !important}
+      #projetos .gallery-item img{height:170px;min-height:170px}
+      .solucao-card{aspect-ratio:4/3}
     }
+
+    /* Parceiros: seção menor */
+    #parceiros{padding:36px 0}
+    #parceiros .section-header{margin-bottom:22px}
+    .parceiros-grid{max-width:640px;margin-inline:auto;gap:14px}
+    .parceiro-card{padding:12px;aspect-ratio:4/3}
+    @media(max-width:860px){.parceiros-grid{max-width:340px;gap:12px}}
 
     /* Rodapé compacto */
     footer{padding:28px 0 16px}
